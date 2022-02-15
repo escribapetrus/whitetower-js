@@ -1,5 +1,5 @@
 var assert = require('assert');
-var Character = require("../../models/character")
+var Character = require("../../models/Character")
 
 describe('Character', () => {
 

@@ -1,4 +1,4 @@
-Class = require("../models/Class")
+const Class = require("../models/Class")
 
 const classes = {
     "paladin": new Class("paladin", 1, 0, 1, 0),

@@ -1,11 +1,11 @@
 const Character = require("./Character");
 
 class Hero extends Character {
-    constructor(name, lifeTotal, strength, magic) {
-        super(name, lifeTotal)
+    constructor(name, lifeTotal, strength, magic, speed) {
+        super(name, lifeTotal, speed)
         this.strength = strength;
         this.magic = magic;
-        this.abilities = []
+        this.abilities = [];
     }
 
     getAbilities(){ return this.abilities }
@@ -21,6 +21,14 @@ class Hero extends Character {
 
     unlearnAbility(i){
         this.abilities.splice(i,1)
+    }
+
+    cast(abilityIndex){
+        let ability = this.abilities[abilityIndex]
+        return {
+            type: "damage",
+            amount: ability.rawDamage + (this.strength * ability.strengthMultiplier) + (this.magic * ability.magicMultiplier)
+        }
     }
 }
 
